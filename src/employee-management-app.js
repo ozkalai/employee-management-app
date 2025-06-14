@@ -1,6 +1,5 @@
 import { LitElement, html, css } from 'lit';
-
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
+import './header-component.js';
 
 class EmployeeManagementApp extends LitElement {
   static properties = {
@@ -9,17 +8,36 @@ class EmployeeManagementApp extends LitElement {
 
   static styles = css`
     :host {
+      /* Design System Variables */
+      --color-primary: #ff6200;
+      --color-background: #fff;
+      --color-text: #1a2b42;
+      --color-label: #888;
+      --color-border: #eee;
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+      --font-size-xs: 0.75rem;
+      --font-size-sm: 0.88rem;
+      --font-size-md: 1rem;
+      --font-size-lg: 1.25rem;
+      --font-size-xl: 1.5rem;
+      --radius-sm: 2px;
+      --radius-md: 4px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 2px 4px rgba(0,0,0,0.08);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       font-size: calc(10px + 2vmin);
-      color: #1a2b42;
-      max-width: 960px;
+      color: var(--color-text);
+      max-width: 1340px;
       margin: 0 auto;
       text-align: center;
-      background-color: var(--employee-management-app-background-color);
     }
 
     main {
@@ -52,35 +70,12 @@ class EmployeeManagementApp extends LitElement {
 
   constructor() {
     super();
-    this.header = 'My app';
+    this.header = 'Employee Management App';
   }
 
   render() {
     return html`
-      <main>
-        <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
-        <h1>${this.header}</h1>
-
-        <p>Edit <code>src/EmployeeManagementApp.js</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
-      </main>
-
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
+      <header-component></header-component>
     `;
   }
 }
