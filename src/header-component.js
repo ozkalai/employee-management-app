@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-import { useLanguageStore } from './store-language.js';
+import { useLanguageStore } from './stores/store-language.js';
 import tr from './locales/tr.js';
 import en from './locales/en.js';
 
