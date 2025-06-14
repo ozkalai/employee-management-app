@@ -39,7 +39,7 @@ class HeaderComponent extends LitElement {
       margin-top: var(--space-lg);
     }
     .header-top-label {
-      font-size: var(--font-size-sm);
+      font-size: var(--font-size-xs);
       color: var(--color-label);
       margin-bottom: var(--space-xs);
       font-weight: var(--header-label-weight, 500);
@@ -55,7 +55,7 @@ class HeaderComponent extends LitElement {
       box-sizing: border-box;
       width: 100%;
       box-shadow: var(--shadow-md);
-      margin-top: var(--space-md);
+      margin-top: var(--space-sm);
     }
     .header-content {
       display: flex;

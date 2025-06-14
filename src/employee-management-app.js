@@ -38,6 +38,8 @@ class EmployeeManagementApp extends LitElement {
       max-width: 1340px;
       margin: 0 auto;
       text-align: center;
+      padding-left: var(--space-sm);  
+      padding-right: var(--space-sm);
     }
 
     main {
