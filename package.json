@@ -17,6 +17,7 @@
     "start": "web-dev-server"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.8.0",
     "lit": "^3.1.4",
     "zustand": "^5.0.5"
   },
