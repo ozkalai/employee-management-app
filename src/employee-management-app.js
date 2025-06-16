@@ -11,6 +11,7 @@ class EmployeeManagementApp extends LitElement {
     :host {
       /* Design System Variables */
       --color-primary: #ff6200;
+      --color-secondary:rgb(104, 126, 214);
       --color-background: #fff;
       --color-text: #1a2b42;
       --color-label: #888;
@@ -20,6 +21,11 @@ class EmployeeManagementApp extends LitElement {
       --space-md: 16px;
       --space-lg: 24px;
       --space-xl: 32px;
+      --radius-xs: 4px;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
       --font-size-xs: 0.75rem;
       --font-size-sm: 0.88rem;
       --font-size-md: 1rem;
