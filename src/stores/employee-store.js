@@ -26,7 +26,11 @@ export const useEmployeeStore = createStore(
         );
         set({ employees: updated });
       },
-        }),
+      deleteEmployee: (id) => {
+        const updated = get().employees.filter(emp => emp.id !== id);
+        set({ employees: updated });
+      },
+    }),
     { name: 'employees' }
   )
 );
