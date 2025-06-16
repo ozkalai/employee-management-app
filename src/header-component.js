@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
-import { useLanguageStore } from './stores/store-language.js';
+import { useLanguageStore } from './stores/language-store.js';
+import { useViewStore } from './stores/view-store.js';
 import tr from './locales/tr.js';
 import en from './locales/en.js';
 
@@ -8,16 +9,24 @@ const ingLogo = new URL('../assets/logos/ing-logo-white.png', import.meta.url).h
 class HeaderComponent extends LitElement {
   static properties = {
     language: { type: String },
+    view: { type: String },
   };
 
   constructor() {
     super();
     this.language = useLanguageStore.getState().language;
+    this.view = useViewStore.getState().view;
     this.unsubscribe = useLanguageStore.subscribe(
       (state) => {
         this.language = state.language;
       },
       (state) => state.language
+    );
+    this.unsubscribeView = useViewStore.subscribe(
+      (state) => {
+        this.view = state.view;
+      },
+      (state) => state.view
     );
     this.translations = { tr, en };
   }
@@ -25,6 +34,7 @@ class HeaderComponent extends LitElement {
   disconnectedCallback() {
     super.disconnectedCallback();
     this.unsubscribe();
+    this.unsubscribeView();
   }
 
   handleLangChange(e) {
@@ -127,7 +137,7 @@ class HeaderComponent extends LitElement {
   render() {
     const t = this.translations[this.language].header;
     return html`
-      <span class="header-top-label">${t.label}</span>
+      <span class="header-top-label">${t.label} (${this.view === 'table' ? t.tableView : t.listView})</span>
       <header>
         <div class="header-content">
           <img class="logo" src="${ingLogo}" alt="ING Logo" />
