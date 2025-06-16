@@ -1,4 +1,5 @@
 import { createStore } from 'zustand/vanilla';
+import { persist } from 'zustand/middleware';
 import { generateEmployees } from '../utils/employee-mock.js';
 
 const getInitialEmployees = () => {
@@ -6,25 +7,26 @@ const getInitialEmployees = () => {
     const data = localStorage.getItem('employees');
     if (data) return JSON.parse(data);
   }
-  return generateEmployees(1000);
+  const mockEmployees = generateEmployees(1000);
+  localStorage.setItem('employees', JSON.stringify(mockEmployees));
+  return mockEmployees;
 };
 
-export const useEmployeeStore = createStore((set, get) => ({
-  employees: getInitialEmployees(),
-  addEmployee: (employee) => {
-    const updated = [...get().employees, employee];
-    set({ employees: updated });
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('employees', JSON.stringify(updated));
-    }
-  },
-  editEmployee: (id, updatedFields) => {
-    const updated = get().employees.map(emp =>
-      emp.id === id ? { ...emp, ...updatedFields } : emp
-    );
-    set({ employees: updated });
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('employees', JSON.stringify(updated));
-    }
-  },
-})); 
+export const useEmployeeStore = createStore(
+  persist(
+    (set, get) => ({
+      employees: getInitialEmployees(),
+      addEmployee: (employee) => {
+        const updated = [...get().employees, employee];
+        set({ employees: updated });
+      },
+      editEmployee: (id, updatedFields) => {
+        const updated = get().employees.map(emp =>
+          emp.id === id ? { ...emp, ...updatedFields } : emp
+        );
+        set({ employees: updated });
+      },
+        }),
+    { name: 'employees' }
+  )
+);
