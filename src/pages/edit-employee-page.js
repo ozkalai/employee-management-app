@@ -3,6 +3,7 @@ import { useEmployeeStore } from '../stores/employee-store.js';
 import en from '../locales/en.js';
 import tr from '../locales/tr.js';
 import { useLanguageStore } from '../stores/language-store.js';
+import { usePaginationStore } from '../stores/pagination-store.js';
 
 const DEPARTMENTS = ['Analytics', 'Tech'];
 const POSITIONS = ['Junior', 'Medior', 'Senior'];
@@ -152,7 +153,8 @@ export class EditEmployeePage extends LitElement {
     // Update employee
     useEmployeeStore.getState().editEmployee(this.userId, { ...this.values });
     this.submitting = false;
-    window.location.href = '/';
+    const page = usePaginationStore.getState().currentPage;
+    window.location.href = `/${page ? `?page=${page}` : ''}`;
   }
 
   render() {
