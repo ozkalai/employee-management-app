@@ -88,6 +88,10 @@ class HeaderComponent extends LitElement {
       font-size: var(--font-size-xs);
       color: var(--color-primary);
       gap: var(--space-xs);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
     }
     .employees svg {
       width: 16px;
@@ -108,6 +112,7 @@ class HeaderComponent extends LitElement {
       font-family: sans-serif;
     }
     .add-new-btn {
+      text-decoration: none;
       background: none;
       border: none;
       color: var(--color-primary);
@@ -142,13 +147,13 @@ class HeaderComponent extends LitElement {
         <div class="header-content">
           <img class="logo" src="${ingLogo}" alt="ING Logo" />
           <div class="right-section">
-            <span class="employees">
+            <a class="employees" href="/">
               <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>
               ${t.employees}
-            </span>
-            <button class="add-new-btn">
+            </a>
+            <a class="add-new-btn" href="/add">
               <span style="font-size: 1.2em;">+</span> ${t.addNew}
-            </button>
+            </a>
             <select class="lang-picker" @change="${this.handleLangChange}">
               <option value="tr" ?selected=${this.language === 'tr'}>🇹🇷</option>
               <option value="en" ?selected=${this.language === 'en'}>🇬🇧</option>
