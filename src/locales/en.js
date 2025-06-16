@@ -17,4 +17,10 @@ export default {
     position: 'Position',
     actions: 'Actions',
   },
+  deleteConfirmation: {
+    title: 'Are you sure?',
+    message: 'Selected employee record of {name} will be deleted.',
+    cancel: 'Cancel',
+    proceed: 'Proceed'
+  }
 }; 

@@ -17,4 +17,10 @@ export default {
     position: 'Pozisyon',
     actions: 'İşlemler',
   },
+  deleteConfirmation: {
+    title: 'Emin misiniz?',
+    message: '{name} isimli çalışan kaydı silinecektir.',
+    cancel: 'İptal',
+    proceed: 'Devam Et'
+  }
 }; 
