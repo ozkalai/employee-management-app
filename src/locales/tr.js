@@ -22,5 +22,15 @@ export default {
     message: '{name} isimli çalışan kaydı silinecektir.',
     cancel: 'İptal',
     proceed: 'Devam Et'
+  },
+  addEmployee: {
+    firstName: 'Adı',
+    lastName: 'Soyadı',
+    dateOfEmployment: 'İşe Giriş Tarihi',
+    dateOfBirth: 'Doğum Tarihi',
+    phone: 'Telefon',
+    email: 'E-posta',
+    department: 'Departman',
+    position: 'Pozisyon',
   }
 }; 
