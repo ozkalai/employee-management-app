@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" src="/assets/logos/preview.png"></img>
+  <img width="700" src="/assets/logos/preview.png"></img>
 </p>
 
 # Employee Management App
