@@ -1,6 +1,6 @@
 import { fixture, html, expect } from '@open-wc/testing';
 import '../src/header-component.js';
-import { useLanguageStore } from '../src/stores/store-language.js';
+import { useLanguageStore } from '../src/stores/language-store.js';
 
 describe('HeaderComponent', () => {
   afterEach(() => {
