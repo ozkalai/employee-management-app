@@ -1,8 +1,8 @@
 import { LitElement, html, css } from 'lit';
-import './header-component.js';
-import './employee-list.js';
-import './add-employee-page.js';
-import './edit-employee-page.js';
+import './containers/header-component.js';
+import './containers/employee-list.js';
+import './pages/add-employee-page.js';
+import './pages/edit-employee-page.js';
 import { Router } from '@vaadin/router';
 
 export class EmployeeManagementApp extends LitElement {

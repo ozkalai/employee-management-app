@@ -1,8 +1,8 @@
 import { LitElement, html, css } from 'lit';
-import { useEmployeeStore } from './stores/employee-store.js';
-import en from './locales/en.js';
-import tr from './locales/tr.js';
-import { useLanguageStore } from './stores/language-store.js';
+import { useEmployeeStore } from '../stores/employee-store.js';
+import en from '../locales/en.js';
+import tr from '../locales/tr.js';
+import { useLanguageStore } from '../stores/language-store.js';
 
 const DEPARTMENTS = ['Analytics', 'Tech'];
 const POSITIONS = ['Junior', 'Medior', 'Senior'];

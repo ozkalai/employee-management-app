@@ -1,10 +1,10 @@
 import { LitElement, html, css } from 'lit';
-import { useLanguageStore } from './stores/language-store.js';
-import { useViewStore } from './stores/view-store.js';
-import tr from './locales/tr.js';
-import en from './locales/en.js';
+import { useLanguageStore } from '../stores/language-store.js';
+import { useViewStore } from '../stores/view-store.js';
+import tr from '../locales/tr.js';
+import en from '../locales/en.js';
 
-const ingLogo = new URL('../assets/logos/ing-logo-white.png', import.meta.url).href;
+const ingLogo = new URL('../../assets/logos/ing-logo-white.png', import.meta.url).href;
 
 class HeaderComponent extends LitElement {
   static properties = {
