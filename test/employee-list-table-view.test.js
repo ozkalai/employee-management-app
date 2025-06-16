@@ -1,5 +1,5 @@
 import { fixture, html, expect } from '@open-wc/testing';
-import '../src/employee-list-table-view.js';
+import '../src/containers/employee-list-table-view.js';
 import { useEmployeeStore } from '../src/stores/employee-store.js';
 
 describe('EmployeeListTableView', () => {

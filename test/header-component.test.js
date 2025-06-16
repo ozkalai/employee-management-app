@@ -1,5 +1,5 @@
 import { fixture, html, expect } from '@open-wc/testing';
-import '../src/header-component.js';
+import '../src/containers/header-component.js';
 import { useLanguageStore } from '../src/stores/language-store.js';
 
 describe('HeaderComponent', () => {

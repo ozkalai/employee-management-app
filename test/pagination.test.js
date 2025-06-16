@@ -1,5 +1,5 @@
 import { fixture, html, expect } from '@open-wc/testing';
-import '../src/components/pagination-component.js';
+import '../src/containers/pagination-component.js';
 import { usePaginationStore } from '../src/stores/pagination-store.js';
 
 describe('PaginationComponent', () => {

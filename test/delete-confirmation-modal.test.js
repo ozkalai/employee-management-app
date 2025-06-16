@@ -1,5 +1,5 @@
 import { fixture, html, expect, oneEvent } from '@open-wc/testing';
-import '../src/components/delete-confirmation-modal.js';
+import '../src/containers/delete-confirmation-modal.js';
 import { useLanguageStore } from '../src/stores/language-store.js';
 
 describe('DeleteConfirmationModal', () => {
