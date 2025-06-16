@@ -1,31 +1,59 @@
 <p align="center">
-  <img width="200" src="https://open-wc.org/hero.png"></img>
+  <img width="200" src="/assets/logos/preview.png"></img>
 </p>
 
-## Open-wc Starter App
+# Employee Management App
 
-[![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
+A modern, responsive employee management system built with Lit, Zustand, Vaadin Router, and Open WC.
+Supports table and list views, add/edit/delete, pagination, localization, and more.
 
-## Quickstart
+## Features
 
-To get started:
+- **Employee List**: View employees in a table or list format, with pagination.
+- **Add/Edit Employee**: Add new employees or edit existing ones with validation and unique email enforcement.
+- **Delete Employee**: Delete employees with confirmation modal.
+- **Pagination**: Paginated list and table views, with current page reflected in the URL.
+- **Localization**: Supports English and Turkish, with instant language switching.
+- **Routing**: Uses Vaadin Router for SPA navigation (`/`, `/add`, `/edit/:userId`).
+- **State Management**: Uses Zustand for employee and pagination state, persisted in localStorage.
+- **Responsive Design**: Works well on desktop and mobile.
+
+## Getting Started
 
 ```bash
-npm init @open-wc
-# requires node 10 & npm 6 or higher
+npm install
+npm start
 ```
+
+Open [http://localhost:8000](http://localhost:8000) in your browser.
 
 ## Scripts
 
-- `start` runs your app for development, reloading on file changes
-- `start:build` runs your app after it has been built using the build command
-- `build` builds your app and outputs it in your `dist` directory
-- `test` runs your test suite with Web Test Runner
-- `lint` runs the linter for your project
-- `format` fixes linting and formatting errors
+- `start` – Run the app in development mode
+- `build` – Build the app for production
+- `test` – Run the test suite with Web Test Runner
+- `lint` – Run the linter
+- `format` – Auto-format code
 
-## Tooling configs
+## Usage
 
-For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
+- Use the **view toggle** to switch between table and list views.
+- Use the **pagination** at the bottom to navigate pages. The current page is reflected in the URL.
+- Click **+Add New** to add an employee. After adding, you'll return to the same page you were on.
+- Click the **edit** icon to edit an employee. After editing, you'll return to the same page.
+- Click the **delete** icon to remove an employee (with confirmation).
 
-If you customize the configuration a lot, you can consider moving them to individual files.
+## Testing
+
+Run all tests:
+
+```bash
+npm test
+```
+
+Tests cover:
+- Table and list views
+- Add/edit/delete flows
+- Pagination and routing
+- Localization
+```
