@@ -2,6 +2,7 @@ import { LitElement, html, css } from 'lit';
 import './header-component.js';
 import './employee-list.js';
 import './add-employee-page.js';
+import './edit-employee-page.js';
 import { Router } from '@vaadin/router';
 
 export class EmployeeManagementApp extends LitElement {
@@ -70,6 +71,7 @@ export class EmployeeManagementApp extends LitElement {
     router.setRoutes([
       { path: '/', component: 'employee-list' },
       { path: '/add', component: 'add-employee-page' },
+      { path: '/edit/:userId', component: 'edit-employee-page' },
     ]);
     window.appRouter = router;
   }
