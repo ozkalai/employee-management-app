@@ -19,12 +19,12 @@ export const useEmployeeStore = createStore(
     (set, get) => ({
       employees,
       addEmployee: (employee) => {
-        const updated = [...get().employees, employee];
+        const updated = [employee, ...get().employees];
         set({ employees: updated });
       },
       editEmployee: (id, updatedFields) => {
         const updated = get().employees.map(emp =>
-          emp.id === id ? { ...emp, ...updatedFields } : emp
+          emp.id === id ? {...emp, ...updatedFields } : emp
         );
         set({ employees: updated });
       },
