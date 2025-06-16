@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import './header-component.js';
+import './employee-list.js';
 
 class EmployeeManagementApp extends LitElement {
   static properties = {
@@ -42,8 +43,9 @@ class EmployeeManagementApp extends LitElement {
       padding-right: var(--space-sm);
     }
 
-    main {
-      flex-grow: 1;
+
+    .app-container {
+      width: 100%;
     }
 
     .logo {
@@ -77,7 +79,10 @@ class EmployeeManagementApp extends LitElement {
 
   render() {
     return html`
-      <header-component></header-component>
+      <div class="app-container">
+        <header-component></header-component>
+        <employee-list></employee-list>
+      </div>
     `;
   }
 }
