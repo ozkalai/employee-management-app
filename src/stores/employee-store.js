@@ -7,15 +7,17 @@ const getInitialEmployees = () => {
     const data = localStorage.getItem('employees');
     if (data) return JSON.parse(data);
   }
-  const mockEmployees = generateEmployees(1000);
+  const mockEmployees = generateEmployees(890);
   localStorage.setItem('employees', JSON.stringify(mockEmployees));
   return mockEmployees;
 };
 
+const employees = getInitialEmployees();
+
 export const useEmployeeStore = createStore(
   persist(
     (set, get) => ({
-      employees: getInitialEmployees(),
+      employees,
       addEmployee: (employee) => {
         const updated = [...get().employees, employee];
         set({ employees: updated });
