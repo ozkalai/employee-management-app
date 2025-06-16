@@ -1,12 +1,10 @@
 import { LitElement, html, css } from 'lit';
 import './header-component.js';
 import './employee-list.js';
+import './add-employee-page.js';
+import { Router } from '@vaadin/router';
 
-class EmployeeManagementApp extends LitElement {
-  static properties = {
-    header: { type: String },
-  }
-
+export class EmployeeManagementApp extends LitElement {
   static styles = css`
     :host {
       /* Design System Variables */
@@ -48,46 +46,39 @@ class EmployeeManagementApp extends LitElement {
       padding-left: var(--space-sm);  
       padding-right: var(--space-sm);
     }
-
-
     .app-container {
       width: 100%;
     }
-
     .logo {
       margin-top: 36px;
       animation: app-logo-spin infinite 20s linear;
     }
-
     @keyframes app-logo-spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
-
     .app-footer {
       font-size: calc(12px + 0.5vmin);
       align-items: center;
     }
-
-    .app-footer a {
-      margin-left: 5px;
-    }
+    .app-footer a { margin-left: 5px; }
   `;
 
-  constructor() {
-    super();
-    this.header = 'Employee Management App';
+  firstUpdated() {
+    const outlet = this.renderRoot.getElementById('outlet');
+    const router = new Router(outlet);
+    router.setRoutes([
+      { path: '/', component: 'employee-list' },
+      { path: '/add', component: 'add-employee-page' },
+    ]);
+    window.appRouter = router;
   }
 
   render() {
     return html`
       <div class="app-container">
         <header-component></header-component>
-        <employee-list></employee-list>
+        <div id="outlet"></div>
       </div>
     `;
   }
