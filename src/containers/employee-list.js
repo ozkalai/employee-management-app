@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import './employee-list-table-view.js';
+import './employee-list-list-view.js';
 import { useViewStore } from '../stores/view-store.js'; 
 import { useLanguageStore } from '../stores/language-store.js';
 import tr from '../locales/tr.js';

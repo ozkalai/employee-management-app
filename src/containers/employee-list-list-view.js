@@ -19,6 +19,10 @@ class EmployeeListListView extends LitElement {
       display: flex;
       flex-direction: column;
       gap: var(--space-md);
+      height: calc(100vh - 250px);
+      overflow-y: auto;
+      list-style: none;
+      padding: 0;
     }
     .employee-card {
       background: #fff;
@@ -147,11 +151,10 @@ class EmployeeListListView extends LitElement {
 
   render() {
     const t = translations[this.language].employeeList;
-    console.log("pagedEmployees",this.pagedEmployees);
     return html`
-      <div class="list-container">
+      <ul class="list-container">
         ${this.pagedEmployees.map(emp => html`
-          <div class="employee-card">
+          <li class="employee-card">
             <div class="info-group">
               <div class="info-item"><b>${t.firstName}:</b> ${emp.firstName}</div>
               <div class="info-item"><b>${t.lastName}:</b> ${emp.lastName}</div>
@@ -181,9 +184,9 @@ class EmployeeListListView extends LitElement {
                 tabindex="0"
               >${deleteIcon}</span>
             </div>
-          </div>
+          </li>
         `)}
-      </div>
+      </ul>
       <delete-confirmation-modal
         @delete-confirmed=${this.handleDeleteConfirmed}
       ></delete-confirmation-modal>
