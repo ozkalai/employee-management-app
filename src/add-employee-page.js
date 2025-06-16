@@ -141,7 +141,7 @@ export class AddEmployeePage extends LitElement {
     });
     this.submitting = false;
     // use vaadin router to navigate to the employee list page
-    window.appRouter.navigate('/');
+    window.location.href = '/';
   }
 
   render() {
