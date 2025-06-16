@@ -86,6 +86,7 @@ class EmployeeList extends LitElement {
       </div>
       ${this.view === 'table' ? html`<employee-list-table-view></employee-list-table-view>` : ''}
       ${this.view === 'list' ? html`<div>list</div>` : ''}
+      <pagination-component></pagination-component>
     `;
   }
 }

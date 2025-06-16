@@ -223,7 +223,6 @@ class EmployeeListTableView extends LitElement {
           </tbody>
         </table>
       </div>
-      <pagination-component></pagination-component>
       <delete-confirmation-modal
         @delete-confirmed=${this.handleDeleteConfirmed}
       ></delete-confirmation-modal>
