@@ -208,7 +208,15 @@ class EmployeeListTableView extends LitElement {
                 <td class="department">${emp.department}</td>
                 <td class="position">${emp.position}</td>
                 <td class="actions">
-                  <span title="Edit" style="cursor:pointer;display:inline-flex;align-items:center;">${editIcon}</span>
+                  <a 
+                    title="Edit"
+                    style="cursor:pointer;display:inline-flex;align-items:center;"
+                    role="button"
+                    tabindex="0"
+                    href=${`/edit/${emp.id}`}
+                  >
+                    <span>${editIcon}</span>
+                  </a>
                   <span 
                     title="Delete" 
                     style="cursor:pointer;display:inline-flex;align-items:center;"
