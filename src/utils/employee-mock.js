@@ -5,7 +5,7 @@ const POSITIONS = ['Junior', 'Medior', 'Senior'];
 
 export function generateEmployee() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     dateOfEmployment: faker.date.past(10).toISOString().split('T')[0],
@@ -14,11 +14,9 @@ export function generateEmployee() {
     email: faker.internet.email(),
     department: faker.helpers.arrayElement(DEPARTMENTS),
     position: faker.helpers.arrayElement(POSITIONS),
-  };
+  };  
 }
 
 export function generateEmployees(count = 10) {
   return Array.from({ length: count }, () => generateEmployee() );
 }
-
-export { DEPARTMENTS, POSITIONS }; 
