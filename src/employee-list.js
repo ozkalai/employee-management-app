@@ -84,7 +84,7 @@ class EmployeeList extends LitElement {
           <button class="view-btn  ${this.view === 'table' ? 'active' : ''}" @click="${() => this.handleViewChange('table')}">${tableViewIcon}</button>
         </div>
       </div>
-      ${this.view === 'table' ? html`<div>table</div>` : ''}
+      ${this.view === 'table' ? html`<employee-list-table-view></employee-list-table-view>` : ''}
       ${this.view === 'list' ? html`<div>list</div>` : ''}
     `;
   }
